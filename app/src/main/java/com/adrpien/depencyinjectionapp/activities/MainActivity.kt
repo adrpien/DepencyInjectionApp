@@ -10,10 +10,11 @@ import javax.inject.Inject
  /*
  How to:
 
- 1. Create classes and their subclasses tree and add annotations
- 2. Create component interface (HumanComponent):
+ 1. Add dependecies in build.gradle
+ 2. Create classes and their subclasses tree and add annotations
+ 3. Create component interface (HumanComponent):
     - create inject function
- 3.
+ 4.
   */
 
  class MainActivity : AppCompatActivity() {
@@ -25,6 +26,8 @@ import javax.inject.Inject
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Using dependecies injection
+        // DaggerHumanComponent will be unresolved until compilation
         val component = DaggerHumanComponent.create()
         component.inject(this)
 
